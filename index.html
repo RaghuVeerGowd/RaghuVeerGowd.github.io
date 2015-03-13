@@ -1,1 +1,121 @@
-HI, i am Raghuveergowd.K . iam working as ruby on rails developer since 2014 may . its my pleasure that to share my knowledge and experience to open source,thank you .
+<html>
+<head>
+	<title>Parallax Scrolling with HTML and jQuery - MrBool Tutorial</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+<style type="text/css">
+* {margin:0; padding: 0;}
+	html, body {height:100%;}
+	 
+	/** format elements which have backgrounds parallax **/
+	.bgParallax {
+		font-family: 'Elsie', cursive;
+		color:#FFF;
+		margin: 0 auto;
+		width: 100%;
+		max-width: 1920px;
+		position: relative;
+		min-height: 100%;
+		text-shadow:0 0 10px rgba(0,0,0,0.7);
+	 
+		background-position: 50% 0;
+		background-repeat: repeat;
+		background-attachment: fixed;
+	}
+	 
+	/* Define backgrounds of divs */
+	#aboutus {background-image: url(http://people.stfx.ca/x2009/x2009hdv/background_evrgreen.gif);}
+	#mission {
+		background-image: url(http://i.stack.imgur.com/e7uYa.png);
+		-webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+		-moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+		-ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+		-o-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+		box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	}
+	 
+	/** Format article **/
+	.bgParallax article {
+	  width: 70%;
+	  text-align: center;
+	  margin:0 auto;
+	  padding:20% 0 0;
+	}
+	 
+	/** format text **/
+	article h1 {font-size:40px;}
+	article p {line-height: 30px; font-size:20px; margin-top:15px;}
+	article p a {color:red; text-decoration:none; font-size:20px;}
+	
+
+ 
+
+.myButton {
+	-moz-box-shadow: 9px 9px 18px -2px #3dc21b;
+	-webkit-box-shadow: 9px 9px 18px -2px #3dc21b;
+	box-shadow: 9px 9px 18px -2px #3dc21b;
+	background-color:#44c767;
+	-moz-border-radius:35px;
+	-webkit-border-radius:35px;
+	border-radius:35px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:17px;
+	padding:10px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+</style>
+<script type="text/javascript">
+
+$('div.bgParallax').each(function(){
+	var $obj = $(this);
+
+	$(window).scroll(function() {
+		var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+
+		var bgpos = '50% '+ yPos + 'px';
+
+		$obj.css('background-position', bgpos );
+ 
+	}); 
+});
+
+</script>
+<body>
+    
+	<div id="aboutus" class="bgParallax" data-speed="15">
+	
+      <article>
+      
+     	<h1>RaghuVeerGowd.K <a href="https://github.com/RaghuVeerGowd" target="_blank" class="myButton">VIEW GITHUB</a></h1><br />
+     	<img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/8/005/07d/0ab/3915238.jpg" alt="Smiley face" height="200" width="250"><br />
+	     	<p>Well, I am RaghuVeerGowd.K -- Working as ROR(Ruby On Rails) developer in <a href="http://carmatec.com/" target="_blank">"carmatec It solutions".</a> <br />
+	     	I am a web developer with extensive knowledge and experience using Ruby On Rails. My most recent technological interests and passions include the java script , .js front-end ,javascript framework,ajax-functionalities ,and experimenting with writing back-end services in Sql , mongodb.
+	     	</p>
+	     </article>
+	</div>
+	<div id="mission" class="bgParallax" data-speed="10">
+	     <article>
+	     	<h1> </h1>
+	     <p></p>
+	     </article>
+	</div>
+
+
+
+</body>
+</html>
+
